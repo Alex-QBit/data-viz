@@ -5,7 +5,7 @@ Main tasks are:
 2. What is the most favorite type of subscription the viewers have?
 3. How many viewers (users) are there in each country where our service is positioned?
 4. What age distribution does each country has in our service?
-5. WHere are located the viewers who have benn subscribed for the service the longest?
+5. Where are the viewers located who have been subscribed for the service the longest?
 6. What is the correlation between type of subscription and user's country?
 7. What platform is the most popular among our viewers?
 8. What is the correlation between: revenue, type of subscription, country and platform?
