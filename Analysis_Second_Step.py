@@ -54,3 +54,55 @@ ax.set_xlabel('Возраст')
 plt.show()
 
 # Where are the viewers located who have been subscribed for the service the longest?
+# Barplot as a method allows us to determine both categories for each country and uncertainty around satistical estimate values.
+fig, ax = plt.subplots()
+sns.barplot(x = 'sub_period', y = 'country', data = data, color = '#6F7E88', width = 0.75)
+ax.set_xlabel('Период подписки, дни')
+ax.set_ylabel('Страна')
+plt.show()
+
+# What is the correlation between type of subscription and user's country?
+# This graph counts the number of users in each country and of each type (basic, standart, premium).
+fig, ax = plt.subplots(figsize=(10,6))
+sns.countplot(y= 'country', hue= 'sub_type', data=data, palette=palette, width=0.8)
+ax.set_xlabel('Количество пользователей')
+ax.set_ylabel('Страна')
+plt.show()
+
+# What platform is the most popular among our viewers?
+# By each country
+fig, ax = plt.subplots(figsize=(15,12))
+sns.countplot(y= 'country', hue= 'device', data=data, palette=palette, width=0.8)
+ax.set_xlabel('Количество пользователей')
+ax.set_ylabel('Страна')
+plt.show()
+
+# Worldwide
+fig, ax = plt.subplots(figsize=(10,6))
+sns.countplot(y = 'device', data = data, palette = palette, width = 0.65)
+ax.set_xlabel('Количество пользователей')
+ax.set_ylabel('Платформа')
+plt.show()
+
+# What is the correlation between: revenue, type of subscription, country and platform?
+# This boxplot (box-and-whisker) shows the quartiles of the dataset while the whiskers extend to show the rest of the distribution (0%, 25%, 50%, 75%, 100%).
+# The following graph vizualizes revenue from each subscription.
+fig, ax = plt.subplots(figsize=(12,10))
+sns.boxplot(x = 'sub_type', y = 'monthly_revenue', data = data, palette = palette)
+ax.set_xlabel('Тип подписки')
+ax.set_ylabel('Месячная выручка')
+plt.show()
+
+# By each country
+fig, ax = plt.subplots(figsize=(20,12))
+sns.boxplot(x = 'country', y = 'monthly_revenue', data = data, palette = palette)
+ax.set_xlabel('Страна')
+ax.set_ylabel('Месячная выручка')
+plt.show()
+
+# By each platform
+fig, ax = plt.subplots(figsize=(12,10))
+sns.boxplot(x = 'device', y = 'monthly_revenue', data = data, palette = palette)
+ax.set_xlabel('Платформа')
+ax.set_ylabel('Месячная выручка')
+plt.show()
